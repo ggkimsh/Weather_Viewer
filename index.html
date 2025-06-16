@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 날씨 시각화</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .map-container {
+            height: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .info-panel {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .last-update {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="header text-center">
+        <h1>한국 날씨 시각화</h1>
+        <p class="mb-0">전국 주요 도시의 현재 날씨 정보를 지도에서 확인하세요</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="map-container">
+                    <iframe src="korea_weather_map.html" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-panel">
+                    <h3>날씨 정보</h3>
+                    <p>지도에서 마커를 클릭하여 각 지역의 상세 날씨 정보를 확인할 수 있습니다.</p>
+                    <hr>
+                    <h4>정보</h4>
+                    <ul>
+                        <li>온도: 현재 기온</li>
+                        <li>습도: 현재 습도</li>
+                    </ul>
+                    <p class="last-update">마지막 업데이트: <span id="update-time"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-4 mb-4">
+        <p class="text-muted">© 2024 한국 날씨 시각화</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 마지막 업데이트 시간 표시
+        document.getElementById('update-time').textContent = new Date().toLocaleString('ko-KR');
+    </script>
+</body>
+</html> 
