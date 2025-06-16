@@ -105,8 +105,8 @@ def create_weather_map(weather_data):
             ).add_to(m)
     
     # 지도를 HTML 파일로 저장
-    m.save('korea_weather_map.html')
-    print("지도가 'korea_weather_map.html' 파일로 저장되었습니다.")
+    m.save('map.html')
+    print("지도가 'map.html' 파일로 저장되었습니다.")
 
 def main():
     # 날씨 데이터 가져오기
